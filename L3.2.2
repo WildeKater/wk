@@ -1,0 +1,50 @@
+/*
+ *2) Дан треугольник координаты вершин А(0,0), В(4,4), С(6,1). Пользователь
+ *вводит с клавиатуры координаты точки x и y. Написать программу которая
+ *определит лежит ли эта точка внутри треугольника или нет. 
+ */
+
+package com.gmail.wildekatertz;
+
+import static java.lang.Math.*;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		float x;
+		float y;
+
+		System.out.println("Введите координаты точки");
+		x = sc.nextFloat();
+		y = sc.nextFloat();
+
+		float ax = 0f;
+		float ay = 0f;
+
+		float bx = 4f;
+		float by = 4f;
+
+		float cx = 6f;
+		float cy = 1f;
+
+		/*
+		 * t1..t3 временные переменные для определения расположения точки относительно
+		 * сторон треугольника
+		 */
+
+		float t1 = (ax - x) * (by - ay) - (bx - ax) * (ay - y);
+		float t2 = (bx - x) * (cy - by) - (cx - bx) * (by - y);
+		float t3 = (cx - x) * (ay - cy) - (ax - cx) * (cy - y);
+
+		if ((t1 <= 0 & t2 <= 0 & t3 <= 0) | (t1 > 0 & t2 > 0 & t3 > 0)) {
+			System.out.println("Точка внутри треугольника");
+		} else {
+			System.out.println("Точка за пределами треугольника");
+		}
+
+	}
+
+}
