@@ -14,26 +14,13 @@ public class Main {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-
 		int numeric;
 		System.out.println("Введите число");
 		numeric = sc.nextInt();
 
-		/*
-		 * Далее временные переменные s1 и s2 для проверки палиндромности через String
-		 */
-
-		String s1 = Integer.toString(numeric);
-
-		String s2;
-		s2 = String.valueOf(s1.charAt(5));
-		s2 = s2.concat(String.valueOf(s1.charAt(4)));
-		s2 = s2.concat(String.valueOf(s1.charAt(3)));
-		s2 = s2.concat(String.valueOf(s1.charAt(2)));
-		s2 = s2.concat(String.valueOf(s1.charAt(1)));
-		s2 = s2.concat(String.valueOf(s1.charAt(0)));
-
-		if (Integer.parseInt(s1) == Integer.parseInt(s2)) {
+		if (((numeric / 100000) == ((numeric % 10) / 1)) 
+				& (((numeric % 100000) / 10000) == ((numeric % 100) / 10))
+				& (((numeric % 10000) / 1000) == ((numeric % 1000) / 100))) {
 			System.out.println("Число палиндром");
 		} else {
 			System.out.println("Число не палиндром");
