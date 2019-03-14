@@ -24,9 +24,10 @@ public class Main {
 		numeric3 = sc.nextInt();
 		numeric4 = sc.nextInt();
 
-		maxNumeric = Math.max(numeric1, numeric2);
-		maxNumeric = Math.max(maxNumeric, numeric3);
-		maxNumeric = Math.max(maxNumeric, numeric4);
+		maxNumeric = numeric1;
+		maxNumeric = (numeric2 >= maxNumeric) ? numeric2 : maxNumeric;
+		maxNumeric = (numeric3 >= maxNumeric) ? numeric3 : maxNumeric;
+		maxNumeric = (numeric4 >= maxNumeric) ? numeric4 : maxNumeric;
 
 		System.out.println("Максимальное число равно " + maxNumeric);
 	}
