@@ -24,14 +24,13 @@ public class Main {
 		numeric = sc.nextInt();
 
 		/*
-		 * Далее три временные переменные для расчёта через String
+		 * Далее две временные переменные для расчёта 
 		 */
 
-		String s = Integer.toString(numeric);
-		int xp1 = Character.digit(s.charAt(0), 10) + Character.digit(s.charAt(1), 10);
-		int xp2 = Character.digit(s.charAt(2), 10) + Character.digit(s.charAt(3), 10);
+		int numericPart1 = (numeric / 1000) + ((numeric % 1000) / 100);
+		int numericPart2 = ((numeric % 100) / 10) + (numeric % 10) ;
 
-		if (xp1 == xp2) {
+		if (numericPart1 == numericPart1) {
 			System.out.println("Номер счастливый");
 		} else {
 			System.out.println("Номер не счастливый");
