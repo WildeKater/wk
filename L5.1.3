@@ -1,0 +1,45 @@
+/*
+ *3) Создать массив случайных чисел (размером 15 элементов). Создайте
+ *второй массив в два раза больше, первые 15 элементов должны быть
+ *равны элементам первого массива, а остальные элементы заполнить
+ *удвоенных значением начальных. Например
+ *Было > {1,4,7,2}
+ *Стало > {1,4,7,2,2,8,14,4} 
+ */
+
+package com.gmail.wildekatertz;
+
+import static java.lang.Math.random;
+import java.util.Arrays;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		int n = 15;
+
+		int[] mas = new int[n];
+		int[] mas2 = new int[n * 2];
+
+		for (int i = 0; i < mas.length; i++) {
+			mas[i] = 0 + (int) (random() * 99);
+		}
+
+		for (int i = 0; i < mas.length; i++) {
+			System.out.print(mas[i] + " ");
+		}
+
+		System.out.println();
+
+		for (int i = 0; i < mas.length; i++) {
+			mas2[i] = mas[i];
+			mas2[mas.length + i] = mas[i] * 2;
+		}
+
+		for (int i = 0; i < mas2.length; i++) {
+			System.out.print(mas2[i] + " ");
+		}
+
+		System.out.println();
+	}
+}
