@@ -14,12 +14,12 @@ public class Main {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		float x;
-		float y;
+		double x;
+		double y;
 
 		System.out.println("Введите координаты (x,y) точки");
-		x = sc.nextFloat();
-		y = sc.nextFloat();
+		x = sc.nextDouble();
+		y = sc.nextDouble();
 
 		if ((sqrt(pow((x - 0), 2) + pow((y - 0), 2))) < 4.0) {
 			System.out.println("Точка внутри круга");
