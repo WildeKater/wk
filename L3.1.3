@@ -22,10 +22,14 @@ public class Main {
 		mYear = sc.nextInt();
 
 		if ((mYear % 4) == 0) {
-			if ((mYear % 100) != 0) {
-				System.out.println("Год  высокосный, в году 366 дней");
+			if ((mYear % 100) == 0) {
+				if ((mYear % 400) == 0) {
+					System.out.println("Год  высокосный, в году 366 дней");
+				} else {
+					System.out.println("Год не высокосный, в году 365 дней");
+				}
 			} else {
-				System.out.println("Год не высокосный, в году 365 дней");
+				System.out.println("Год высокосный, в году 365 дней");
 			}
 		} else {
 			System.out.println("Год не высокосный");
