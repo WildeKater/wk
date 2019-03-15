@@ -14,30 +14,30 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		float x;
-		float y;
+		double x;
+		double y;
 
 		System.out.println("Введите координаты точки");
-		x = sc.nextFloat();
-		y = sc.nextFloat();
+		x = sc.nextDouble();
+		y = sc.nextDouble();
 
-		float ax = 0f;
-		float ay = 0f;
+		double ax = 0.0;
+		double ay = 0.0;
 
-		float bx = 4f;
-		float by = 4f;
+		double bx = 4.0;
+		double by = 4.0;
 
-		float cx = 6f;
-		float cy = 1f;
+		double cx = 6.0;
+		double cy = 1.0;
 
 		/*
 		 * t1..t3 временные переменные для определения расположения точки относительно
 		 * сторон треугольника
 		 */
 
-		float t1 = (ax - x) * (by - ay) - (bx - ax) * (ay - y);
-		float t2 = (bx - x) * (cy - by) - (cx - bx) * (by - y);
-		float t3 = (cx - x) * (ay - cy) - (ax - cx) * (cy - y);
+		double t1 = (ax - x) * (by - ay) - (bx - ax) * (ay - y);
+		double t2 = (bx - x) * (cy - by) - (cx - bx) * (by - y);
+		double t3 = (cx - x) * (ay - cy) - (ax - cx) * (cy - y);
 
 		if ((t1 <= 0 & t2 <= 0 & t3 <= 0) | (t1 > 0 & t2 > 0 & t3 > 0)) {
 			System.out.println("Точка внутри треугольника");
