@@ -1,0 +1,34 @@
+/*
+ *3) Реализуйте метод рисующий на экране прямоугольник из звездочек «*»
+ *— его параметрами будут целые числа которые описывают длину и
+ *ширину такого прямоугольника.
+ */
+
+package com.gmail.wildekatertz;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Введите высоту и ширину прямоугольника");
+		int wight = sc.nextInt();
+		int hight = sc.nextInt();
+
+		draw(wight, hight);
+
+	}
+
+	public static void draw(int a, int b) {
+		for (int i = 0; i < a; i++) {
+			for (int j = 0; j < b; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+
+}
