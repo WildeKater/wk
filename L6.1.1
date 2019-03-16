@@ -1,0 +1,40 @@
+/*
+ *Напишите метод который вернет максимальное число из массива целых
+ *чисел.
+ */
+
+package com.gmail.wildekatertz;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Введите размер массива");
+
+		int n = sc.nextInt();
+
+		System.out.println("Введите числа массива");
+
+		int[] a = new int[n];
+
+		for (int i = 0; i < a.length; i++) {
+			a[i] = sc.nextInt();
+		}
+		
+		System.out.println("Максимальный элемент массива равен " + nmax(a));
+
+	}
+
+	public static int nmax(int[] a) {
+		int max = a[0];
+		for (int i : a) {
+			max = (i >= max) ? i : max;
+		}
+		return max;
+	}
+
+}
