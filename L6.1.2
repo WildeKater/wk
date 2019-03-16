@@ -1,0 +1,39 @@
+/*
+ *2) Реализуйте метод параметрами которого являются - целое число,
+ *вещественное число и строка. Возвращает он конкатенацию строки с
+ *суммой вещественного и целого числа.
+ */
+
+package com.gmail.wildekatertz;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Введите целое число");
+		int iNumeric = sc.nextInt();
+
+		System.out.println("Введите вещественное число");
+		double dNumeric = sc.nextDouble();
+		
+		System.out.println("Введите строку");
+		sc.nextLine();
+		String sLine = sc.nextLine();
+
+		System.out.println("==" + sLine + "==");
+
+		System.out.println("Конкантенация: " + conc(iNumeric, dNumeric, sLine));
+
+	}
+
+	public static String conc(int a, double b, String s) {
+		String concRes;
+		concRes = s + " " + String.valueOf(a + b);
+		return concRes;
+	}
+
+}
