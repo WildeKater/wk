@@ -1,0 +1,44 @@
+/*
+ *4) Напишите метод который реализует линейный поиск элемента в массиве
+ *целых чисел. Если такой элемент в массиве есть то верните его индекс,
+ *если нет то метод должен возвращать число - «-1»
+ */
+
+package com.gmail.wildekatertz;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Введите размер массива");
+		int n = sc.nextInt();
+
+		System.out.println("Введите числа массива");
+		int a[] = new int[n];
+		for (int i = 0; i < a.length; i++) {
+			a[i] = sc.nextInt();
+		}
+
+		System.out.println("Введите искомое число");
+		int numeric = sc.nextInt();
+
+		find(a, numeric);
+
+	}
+
+	public static void find(int a[], int b) {
+		int resFind = -1;
+		for (int i : a) {
+			resFind = (i == b) ? i : resFind;
+			if (resFind!=-1) {
+				break;
+			}
+		}
+		System.out.println(resFind);
+	}
+
+}
