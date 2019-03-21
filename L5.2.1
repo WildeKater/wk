@@ -47,13 +47,8 @@ public class Main {
 		 * Изначальный вывод массива
 		 */
 		for (int i = 0; i < mas.length; i++) {
-			for (int j = 0; j < mas.length; j++) {
-				System.out.print(mas[i][j] + " ");
-			}
-			System.out.println();
+			System.out.println(Arrays.toString(mas[i]));
 		}
-
-		System.out.println();
 
 		System.out.println("Введите угол поворота");
 		int rev = sc.nextInt();
@@ -61,17 +56,17 @@ public class Main {
 		/*
 		 * Поворот массива
 		 */
-		for (int z = 0; z < (4 - ((rev % 360) / 90)); z++) {
+		for (int z = 0; z < (((rev % 360) / 90)); z++) {
 
 			int b = mas.length - 1;
 
 			for (int i = 0; i <= (b / 2); i++) {
 				for (int j = 0 + i; j < b - i; j++) {
-					int t = mas[i][j];
-					mas[i][j] = mas[j][b - i];
-					mas[j][b - i] = mas[b - i][b - j];
-					mas[b - i][b - j] = mas[b - j][i];
-					mas[b - j][i] = t;
+					int t = mas[j][b - i];
+					mas[j][b - i] = mas[i][j];
+					mas[i][j] = mas[b - j][i];
+					mas[b - j][i] = mas[b - i][b - j];
+					mas[b - i][b - j] = t;
 				}
 			}
 
@@ -81,13 +76,8 @@ public class Main {
 		 */
 		System.out.println("Массив развернутый на " + rev + " градусов:");
 		for (int i = 0; i < mas.length; i++) {
-			for (int j = 0; j < mas.length; j++) {
-				System.out.print(mas[i][j] + " ");
-			}
-			System.out.println();
+			System.out.println(Arrays.toString(mas[i]));
 		}
-
-		System.out.println();
 
 	}
 }
