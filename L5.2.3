@@ -71,7 +71,7 @@ public class Main {
 		 * считаем центы
 		 */
 		if ((int)((money%1)*100)/1 > 0) {
-			sMoney = sMoney + part1((int)((money%1)*100)/1) +  " cents";
+			sMoney = sMoney + part1((int)((money*100)%100)/1) +  " cents";
 		}
 		
 		System.out.println("You have: " + sMoney);
