@@ -18,7 +18,7 @@ public class Main {
 		
 		binarNumeric = binarNumeric.replace(" ", "");
 		
-		boolean test = true;
+		boolean checkNumeric = true;
 		char[] charNumeric = binarNumeric.toCharArray();		
 		int[] intNumeric = new int[binarNumeric.length()];
 		
@@ -26,14 +26,14 @@ public class Main {
 			if ((charNumeric[i] == '0') || (charNumeric[i] == '1')) {
 				intNumeric[i] = Character.getNumericValue(charNumeric[i]);
 			} else {
-				test = false;
+				checkNumeric = false;
 				break;
 			}
 		}
 
 		int nnnumeric = 0;
 
-		if (test) {
+		if (checkNumeric) {
 			for (int i = 0; i < intNumeric.length; i++) {
 				nnnumeric = nnnumeric + intNumeric[i] * ((int) Math.pow(2, intNumeric.length - 1 - i));
 			}
