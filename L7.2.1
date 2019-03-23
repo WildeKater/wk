@@ -1,0 +1,66 @@
+/*
+ *1) Ввести с консоли дату. Сравнить ее с текущей датой в системе. Вывести
+ *отличающиеся части (год, месяц) на экран.
+ */
+
+package com.gmail.wildekatertz;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Calendar clOldDate = Calendar.getInstance();
+
+		Scanner sc = new Scanner(System.in);
+
+		Date dateNow = new Date();
+
+		clOldDate.setTime(dateNow);
+
+		int dayNow = clOldDate.get(Calendar.DAY_OF_MONTH);
+		int monthNow = clOldDate.get(Calendar.MONTH) + 1;
+		int yearNow = clOldDate.get(Calendar.YEAR);
+
+		SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+
+		String myInputDate = "";
+		System.out.println("Введите дату в формате дд.мм.гггг");
+		myInputDate = sc.nextLine();
+
+		Date inputDate = new Date();
+
+		try {
+			inputDate = sdf.parse(myInputDate);
+		} catch (ParseException e) {
+			System.out.println(e);
+		}
+
+		Calendar clInputDate = Calendar.getInstance();
+		clInputDate.setTime(inputDate);
+
+		int dayInput = clInputDate.get(Calendar.DAY_OF_MONTH);
+		int monthInput = clInputDate.get(Calendar.MONTH) + 1;
+		int yearInput = clInputDate.get(Calendar.YEAR);
+
+		if (dayNow != dayInput) {
+			System.out.println("Дата отличаетсяю Вы ввели " + dayInput + " сегодня " + dayNow);
+		}
+		if (monthNow != monthInput) {
+			System.out.println("Дата отличаетсяю Вы ввели " + monthInput + " сегодня " + monthNow);
+		}
+		if (yearNow != yearInput) {
+			System.out.println("Дата отличаетсяю Вы ввели " + yearInput + " сегодня " + yearNow);
+		}
+		if (inputDate == dateNow) {
+			System.out.println("Вы ввели сегодняшнюю дату");
+		}
+
+	}
+
+}
