@@ -15,14 +15,22 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("Введите высоту и ширину прямоугольника");
-		int wight = sc.nextInt();
-		int hight = sc.nextInt();
+		int width = sc.nextInt();
+		int height = sc.nextInt();
 
-		draw(wight, hight);
+		drawRectangle(width, height);
 
 	}
 
-	public static void draw(int a, int b) {
+	/**
+	 * Draw rectangle width x height size.
+	 * 
+	 * @param a <code> int </code> value. Width of rectangle.
+	 * @param b <code> int </code> value. Height of rectangle.
+	 * 
+	 * @author Alexey_A
+	 */
+	public static void drawRectangle(int a, int b) {
 		for (int i = 0; i < a; i++) {
 			for (int j = 0; j < b; j++) {
 				System.out.print("*");
