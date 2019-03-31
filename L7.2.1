@@ -23,7 +23,6 @@ public class Main {
 
 		clOldDate.setTime(dateNow);
 
-		int dayNow = clOldDate.get(Calendar.DAY_OF_MONTH);
 		int monthNow = clOldDate.get(Calendar.MONTH) + 1;
 		int yearNow = clOldDate.get(Calendar.YEAR);
 
@@ -44,18 +43,14 @@ public class Main {
 		Calendar clInputDate = Calendar.getInstance();
 		clInputDate.setTime(inputDate);
 
-		int dayInput = clInputDate.get(Calendar.DAY_OF_MONTH);
 		int monthInput = clInputDate.get(Calendar.MONTH) + 1;
 		int yearInput = clInputDate.get(Calendar.YEAR);
 
-		if (dayNow != dayInput) {
-			System.out.println("Дата отличаетсяю Вы ввели " + dayInput + " сегодня " + dayNow);
-		}
 		if (monthNow != monthInput) {
-			System.out.println("Дата отличаетсяю Вы ввели " + monthInput + " сегодня " + monthNow);
+			System.out.println("Месяц отличаетсяю Вы ввели " + monthInput + " сегодня " + monthNow);
 		}
 		if (yearNow != yearInput) {
-			System.out.println("Дата отличаетсяю Вы ввели " + yearInput + " сегодня " + yearNow);
+			System.out.println("Год отличаетсяю Вы ввели " + yearInput + " сегодня " + yearNow);
 		}
 		if (inputDate == dateNow) {
 			System.out.println("Вы ввели сегодняшнюю дату");
