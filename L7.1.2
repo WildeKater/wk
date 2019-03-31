@@ -4,7 +4,6 @@
 
 package com.gmail.wildekatertz;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 import static java.lang.Math.random;
 
@@ -24,15 +23,14 @@ public class Main {
 		}
 		
 		System.out.println("Строка с массивом:");
-		System.out.println(arr2Str(mas));
+		arr2Str(mas);
 	}
 
-	public static String arr2Str(int a[]) {
-		String ss = "";
+	public static void arr2Str(int a[]) {
 		for (int i = 0; i < a.length; i++) {
-			ss = ss + " " + a[i];
+			System.out.print(a[i]+ " ");
 		}
-		return ss.trim();
+		return;
 	}
 
 }
