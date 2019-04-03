@@ -5,7 +5,6 @@
 
 package com.gmail.wildekatertz;
 
-import java.io.IOException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -28,19 +27,20 @@ public class Main {
 
 		String filePath = dirPath + fileName;
 
+		save2File(filePath, text);
+
+	}
+
+	public static void save2File(String filePath, String text) {
+
 		File newFile = new File(filePath);
 
-		try {
-			newFile.createNewFile();
-		} catch (IOException e) {
-
-		}
 		try (PrintWriter newPrint = new PrintWriter(newFile)) {
 			newPrint.println(text);
 		} catch (FileNotFoundException e) {
 			System.out.println("Ошибка записи в файл " + filePath);
 		}
-
+		System.out.println("Файл " + filePath + " сохранён");
 	}
 
 }
